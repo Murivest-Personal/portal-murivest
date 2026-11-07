@@ -70,7 +70,7 @@ export const fetchBriefs = createServerFn({ method: 'GET' }).handler(async (): P
 })
 
 export const fetchBriefDetail = createServerFn({ method: 'GET' })
-  .inputValidator((slug: string) => {
+  .validator((slug: string) => {
     if (typeof slug !== 'string' || !/^[a-z0-9-]{1,120}$/.test(slug)) throw new Error('Invalid brief')
     return slug
   })

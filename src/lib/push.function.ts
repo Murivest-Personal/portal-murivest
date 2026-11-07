@@ -7,7 +7,7 @@ interface SubInput {
 }
 
 export const savePushSubscription = createServerFn({ method: 'POST' })
-  .inputValidator((d: SubInput) => {
+  .validator((d: SubInput) => {
     if (!d?.endpoint?.startsWith('https://') || !d.keys?.p256dh || !d.keys?.auth) throw new Error('Invalid subscription')
     return d
   })
@@ -31,7 +31,7 @@ export const savePushSubscription = createServerFn({ method: 'POST' })
   })
 
 export const removePushSubscription = createServerFn({ method: 'POST' })
-  .inputValidator((d: { endpoint: string }) => d)
+  .validator((d: { endpoint: string }) => d)
   .handler(async ({ data }) => {
     const { getSessionUser } = await import('./auth.server')
     const { supabaseAdmin } = await import('@/lib/supabase.server')

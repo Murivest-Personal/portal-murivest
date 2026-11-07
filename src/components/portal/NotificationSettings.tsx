@@ -3,7 +3,8 @@ import { useServerFn } from '@tanstack/react-start'
 import { Bell, BellOff, Download, Share } from 'lucide-react'
 import { savePushSubscription, removePushSubscription } from '@/lib/push.function'
 
-const VAPID_PUBLIC_KEY = import.meta.env['VITE_VAPID_PUBLIC_KEY'] as string
+const VAPID_PUBLIC_KEY = (import.meta as ImportMeta & { env: { VITE_VAPID_PUBLIC_KEY?: string } }).env
+  .VITE_VAPID_PUBLIC_KEY as string
 
 function urlBase64ToUint8Array(base64: string) {
   const padding = '='.repeat((4 - (base64.length % 4)) % 4)
