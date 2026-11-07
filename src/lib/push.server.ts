@@ -1,4 +1,4 @@
-import webpush from 'web-push'
+import * as webpush from 'web-push'
 // TODO: point at your own Supabase admin client
 import { supabaseAdmin } from '@/lib/supabase.server'
 
