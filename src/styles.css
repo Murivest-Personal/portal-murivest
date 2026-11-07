@@ -1,0 +1,240 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Murivest design system — deep forest green, antique gold and ivory, carried
+ * over from the original investor portal.
+ *
+ * Brand colours are exposed as Tailwind utilities (bg-forest, text-gold, ...)
+ * and mapped onto the shadcn semantic tokens below.
+ */
+
+@theme inline {
+  --font-display: "Cinzel", "Times New Roman", Georgia, serif;
+  --font-serif: "Cinzel", "Times New Roman", Georgia, serif;
+  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-forest-light: var(--forest-light);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-light: var(--gold-light);
+  --color-ink: var(--ink);
+  --color-ivory: var(--ivory);
+  --color-line: var(--line);
+  --color-stone: var(--stone);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --forest: oklch(0.348 0.055 163.4);
+  --forest-soft: oklch(0.429 0.06 164.4);
+  --forest-light: oklch(0.53 0.077 163.1);
+  --gold: oklch(0.692 0.071 71.3);
+  --gold-deep: oklch(0.604 0.061 68);
+  --gold-light: oklch(0.739 0.067 74.9);
+  --ink: oklch(0.345 0.028 162.8);
+  --ivory: oklch(0.982 0.004 91.4);
+  --line: oklch(0.916 0.007 88.6);
+  --stone: oklch(0.623 0.011 72.6);
+
+  --radius: 0.25rem;
+  --background: oklch(1 0 0);
+  --foreground: var(--forest);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--forest);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--forest);
+  --primary: var(--forest);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--gold);
+  --secondary-foreground: var(--forest);
+  --muted: oklch(0.955 0.006 91);
+  --muted-foreground: oklch(0.47 0.03 163);
+  --accent: oklch(0.94 0.02 75);
+  --accent-foreground: var(--forest);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--gold);
+  --chart-1: var(--forest);
+  --chart-2: var(--gold);
+  --chart-3: var(--forest-light);
+  --chart-4: var(--gold-deep);
+  --chart-5: var(--forest-soft);
+  --sidebar: var(--forest);
+  --sidebar-foreground: var(--ivory);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--forest);
+  --sidebar-accent: var(--forest-soft);
+  --sidebar-accent-foreground: var(--ivory);
+  --sidebar-border: oklch(0.692 0.071 71.3 / 20%);
+  --sidebar-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  .font-serif,
+  .font-display {
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+}
+
+/* Quiet, white-space-led primitives for the sign-in screen and portal frame. */
+@layer components {
+  .lux-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .lux-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+
+  .lux-input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    padding: 0.7rem 0;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--foreground);
+    outline: none;
+    transition: border-color 0.25s ease;
+  }
+  .lux-input:focus {
+    border-bottom-color: var(--forest);
+  }
+  .lux-input::placeholder {
+    color: var(--stone);
+    opacity: 0.6;
+  }
+
+  .lux-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--forest);
+    color: var(--primary-foreground);
+    padding: 1rem 2rem;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, opacity 0.25s ease;
+  }
+  .lux-button:hover {
+    background: var(--forest-soft);
+  }
+  .lux-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .lux-link {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    transition: color 0.2s ease;
+  }
+  .lux-link:hover {
+    color: var(--foreground);
+  }
+
+  .lux-nav {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .lux-nav:hover,
+  .lux-nav[data-active="true"] {
+    color: var(--foreground);
+  }
+
+  .lux-meta {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+}
+
+@utility pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}

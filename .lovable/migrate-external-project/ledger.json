@@ -1,0 +1,19 @@
+{
+  "source": "code-archive (portal.zip — the /portal folder of a Next.js app)",
+  "capabilities": [
+    { "capability": "code", "source": "19 Next.js portal pages + layout + OrdersList", "outcome": "migrate", "status": "verified", "next_action": "Done; InvestorPortalClient.tsx was not imported anywhere in the source and was not ported" },
+    { "capability": "missing shared components", "source": "NotificationBell, InvestorBriefAccess, PaymentModal, NewEnquiryForm, CriteriaForm, CriteriaActiveToggle, NotificationsList", "outcome": "recreated from call sites", "status": "verified", "next_action": "Ask user for originals if behaviour should differ" },
+    { "capability": "schema", "source": "Supabase (inferred from queries)", "outcome": "migrate", "status": "verified", "next_action": "Compare against the original schema when exports arrive" },
+    { "capability": "records", "source": "Supabase tables", "outcome": "migrate", "status": "pending", "next_action": "Request CSV exports of profiles, publications, asset_briefs, investment_briefs, off_market_deals, brief_orders, payment_confirmations, documents, document_access, enquiries, acquisition_criteria, notifications" },
+    { "capability": "auth identities", "source": "Supabase Auth", "outcome": "migrate", "status": "pending", "next_action": "Request users export (id, email); import, map via legacy_user_ids; users set a new password via email link on first visit" },
+    { "capability": "authorization", "source": "investor_status tiers", "outcome": "migrate", "status": "verified", "next_action": "Tier fields locked by trigger; admins via user_roles" },
+    { "capability": "uploaded file bytes", "source": "Supabase storage bucket user-uploads (avatars)", "outcome": "migrate", "status": "pending", "next_action": "Bucket recreated (private); old avatar files need export or re-upload" },
+    { "capability": "internal API endpoints", "source": "/api/investor-brief-request, /api/mpesa-confirmation, /api/investor-order-cancel", "outcome": "recreated as server functions", "status": "verified", "next_action": "Order + M-Pesa submission verified end-to-end" },
+    { "capability": "M-Pesa payments", "source": "Manual SMS confirmation", "outcome": "preserve", "status": "verified", "next_action": "Confirm Pay Bill 522522 / account 1234567890 are real" },
+    { "capability": "main website pages", "source": "/, /contact, /research, /kenya/country-focus, /verification", "outcome": "link to existing site", "status": "pending", "next_action": "Confirm main site address (assumed murivest.co.ke)" },
+    { "capability": "nav pages without source", "source": "/portal/discover, studio, compare, investments, mandates, intelligence, activity, security, briefs/order, off-market/[id]", "outcome": "accepted gap", "status": "pending", "next_action": "Not in archive; nav re-pointed to existing pages; ask user if they exist elsewhere" },
+    { "capability": "secrets", "source": "NEXT_PUBLIC_SUPABASE_URL/KEY, NEXT_PUBLIC_SITE_URL", "outcome": "replace", "status": "done", "next_action": "None" },
+    { "capability": "cutover", "source": "existing domain", "outcome": "pending", "status": "pending", "next_action": "Publish and connect domain after data import" },
+    { "capability": "verification", "source": "-", "outcome": "verify", "status": "partial", "next_action": "Sign-up, profile, order, M-Pesa, enquiry verified; imported-user first login pending on user export" }
+  ]
+}

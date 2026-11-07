@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1793890388523,
+      "tag": "0000_investor_portal_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793890412355,
+      "tag": "0001_user_uploads_avatar_policies",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793891975902,
+      "tag": "0002_investment_workspace",
+      "breakpoints": true
+    }
+  ]
+}
