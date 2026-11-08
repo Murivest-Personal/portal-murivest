@@ -359,7 +359,7 @@ export default function InvestorPublicationsPage() {
               <span className="font-medium">System Error</span>
             </div>
             <p className="text-sm">Failed to load publications: {error.message}</p>
-             <p className="text-xs mt-2 text-red-600/70">Please refresh or contact info@murivest.co.ke</p>
+             <p className="text-xs mt-2 text-red-600/70">Please refresh or contact office@murivest.com</p>
           </div>
         ) : (
           <div className="space-y-4">

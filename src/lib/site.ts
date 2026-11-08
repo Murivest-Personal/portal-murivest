@@ -1,7 +1,7 @@
 // The public Murivest website (home, contact, research pages) was not part of the
 // migrated archive and keeps running on its existing address. Portal links that
 // pointed at those pages open them there.
-export const MAIN_SITE_URL = "https://murivest.co.ke";
+export const MAIN_SITE_URL = "https://murivest.com";
 
 export function siteUrl(path: string): string {
   if (/^https?:\/\//.test(path)) return path;

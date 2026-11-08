@@ -124,9 +124,9 @@ export default function InvestorPortalLayout({ children }: { children: React.Rea
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-10 sm:flex-row sm:items-center sm:justify-between lg:px-10">
           <span className="lux-meta">© {new Date().getFullYear()} Murivest Group · Strictly confidential</span>
           <span className="lux-meta">
-            <a href="mailto:info@murivest.co.ke" className="hover:text-foreground">info@murivest.co.ke</a>
+            <a href="mailto:office@murivest.com" className="hover:text-foreground">office@murivest.com</a>
             {' · '}
-            <SiteLink href="/" className="hover:text-foreground">murivest.co.ke</SiteLink>
+            <SiteLink href="/" className="hover:text-foreground">murivest.com</SiteLink>
           </span>
         </div>
       </footer>

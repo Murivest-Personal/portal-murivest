@@ -247,8 +247,8 @@ export function AuthFrame({ children }: { children: ReactNode }) {
       <footer className="px-6 pb-10 text-center">
         <p className="lux-meta">
           Strictly confidential ·{" "}
-          <a href="mailto:info@murivest.co.ke" className="hover:text-foreground">
-            info@murivest.co.ke
+          <a href="mailto:office@murivest.com" className="hover:text-foreground">
+            office@murivest.com
           </a>
         </p>
       </footer>

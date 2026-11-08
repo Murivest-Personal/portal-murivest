@@ -361,10 +361,10 @@ function TierCard({ profile }: { profile: Profile }) {
             <p className="text-[10px] text-forest/60 leading-relaxed">
               To upgrade your investor tier, please contact our office directly at{' '}
                <a
-                 href="mailto:info@murivest.co.ke"
+                 href="mailto:office@murivest.com"
                  className="text-gold hover:underline"
                >
-                 info@murivest.co.ke
+                 office@murivest.com
               </a>
             </p>
           </div>
@@ -716,8 +716,8 @@ export default function InvestorProfilePage() {
             </div>
             <p className="mt-4 text-[10px] text-forest/35 leading-relaxed">
               To change your email or password, contact{' '}
-               <a href="mailto:info@murivest.co.ke" className="text-gold hover:underline">
-                 info@murivest.co.ke
+               <a href="mailto:office@murivest.com" className="text-gold hover:underline">
+                 office@murivest.com
               </a>
             </p>
           </div>
